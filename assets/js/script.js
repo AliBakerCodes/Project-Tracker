@@ -1,6 +1,11 @@
-var formEl = $('#skills-form');
-var nameInputEl = $('#skill-name');
-var dateInputEl = $('#datepicker');
+var displayTimeEl = $('#displayTime');
+var tbodyEl = $('#tableBody');
+var submitBtn = $('submit-btn');
+var newProjectBtn=$('new-project-btn')
+var nameInputEl = $('#project-name');
+var typeInputEl = $('project-type');
+var hourlyInputEl = $('hourly-wage');
+var dateInputEl = $('#due-date');
 var skillsListEl = $('#skills-list');
 
 var printSkills = function (name, date) {
@@ -27,38 +32,13 @@ var handleFormSubmit = function (event) {
   dateInputEl.val('');
 };
 
-formEl.on('submit', handleFormSubmit);
-
-// Autocomplete widget
-$(function () {
-  var skillNames = [
-    'Bootstrap',
-    'C',
-    'C++',
-    'CSS',
-    'Express.js',
-    'Git',
-    'HTML',
-    'Java',
-    'JavaScript',
-    'jQuery',
-    'JSON',
-    'MySQL',
-    'Node.js',
-    'NoSQL',
-    'PHP',
-    'Python',
-    'React',
-    'Ruby',
-  ];
-  $('#skill-name').autocomplete({
-    source: skillNames,
-  });
-});
+// formEl.on('submit', handleFormSubmit);
+var currentTime= moment();
+displayTimeEl.text(currentTime.format("MMM Do, YYYY hh:mm:ss"));
 
 // Datepicker widget
 $(function () {
-  $('#datepicker').datepicker({
+  $('#due-date').datepicker({
     changeMonth: true,
     changeYear: true,
   });
