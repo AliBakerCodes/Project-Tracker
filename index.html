@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <title>Project Tracker</title>
+</head>
+<body>
+  <div class="modal fade" id="newProjectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">New Project</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group row">
+              <label for="project-name" class="col-form-label">Project Name:</label>
+              <input type="text" class="form-control" id="project-name">
+            </div>
+            <div class="form-group row">
+              <label for="project-type" class="col-form-label">Project Type:</label>
+              <select class="form-control" id="project-type">
+                <option selected>Choose...</option>
+                <option>Java</option>
+                <option>Javascript</option>
+                <option>Node</option>
+                <option>React</option>
+              </select>
+            </div>
+            <div class="form-group row">
+              <label for="hourly-wage" class="col-form-label">Hourly Wage:</label>
+              <input type="text" class="form-control" id="hourly-wage">
+            </div>
+            <div class="form-group row">
+              <label for="due-date" class="col-form-label">Due Date:</label>
+              <input type="text" class="form-control" id="due-date">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add Project</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="jumbotron jumbotron-fluid bg-info text-light">
+    <div class="container text-center">
+      <h1>
+        Project Tracker
+      </h1>
+      <h2 id="displayTime"></h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row align-items-end">
+    <div class="card col-3" id="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Instructions</h5>
+        <p class="card-text">Welcome to the Project Tracker! You can use the button below to add a new project to the tracker.</p>
+        <a href="#" class="btn btn-primary">Add new Project</a>
+      </div>
+    </div>
+    <div id="sectionTable" class="col-9">
+      <table id="projectTable" class="table table-bordered table-sm table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Project Name</th>
+            <th scope="col">Project Type</th>
+            <th scope="col">Project Date</th>
+            <th scope="col">Hourly Wage</th>
+            <th scope="col">Due Date</th>
+            <th scope="col">Days until Due</th>
+            <th scope="col">Estimate</th>
+            <th scope="col"> </th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+      </table>
+    </div>
+  </div> 
+  </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="./assets/js/script.js"></script>
+
+</html>
