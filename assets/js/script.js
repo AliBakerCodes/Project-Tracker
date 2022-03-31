@@ -58,7 +58,6 @@ tbodyEl.on("click", function (evt) {
   console.log($(target).parents("tr"));
   if (target.matches("button")) {
     console.log("Condition met");
-    // $(target).parents("tr").remove($(target).parents("tr"));
     $(target).closest('tr').remove();
   }
 });
@@ -71,11 +70,11 @@ newProjectBtn.on("click", function(){
 
 function countdown() {
   timeInterval = setInterval(function () {
-
+  displayTimeEl.text(currentTime);
   }, 1000);
 }
 
-displayTimeEl.text(currentTime);
+
 
 //Datepicker widget
 $(function () {
